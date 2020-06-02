@@ -69,9 +69,11 @@ p {
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
 }
+.site-nav .item {
+  position: relative;
+}
 
 .site-nav .link {
-  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -81,6 +83,16 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+.current::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+}
+
 .site-nav .link:hover,
 .site-nav .link:focus,
 .site-nav .link.current {
@@ -235,6 +247,7 @@ p {
   padding-bottom: 94px;
 }
 .project .item {
+  position: relative;
   width: calc((100%-60px) / 3);
   margin-right: 30px;
 }
@@ -243,6 +256,8 @@ p {
 }
 
 .project .text {
+  position: absolute;
+  bottom: 0;
   width: 370px;
   height: 70px;
   padding: 27px 90px;
@@ -431,8 +446,24 @@ p {
 .section-button:focus {
   color: #ffffff;
   background: var(--accent-color);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .section-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 322px;
+  height: 168px;
+  opacity: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
   color: #ffffff;
 }
 .portfolio {
@@ -457,9 +488,15 @@ p {
   display: block;
   text-decoration: none;
 }
-.portfolio-link:hover {
+.portfolio .item:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+.portfolio .item:hover .section-text {
+  opacity: 1;
+}
+.portfolio .item:hover .card-image::before {
+  opacity: 1;
 }
 .card-block {
   padding: 20px 24px;
@@ -471,7 +508,17 @@ p {
   border-bottom-left-radius: 5px; */
 }
 .card-image {
+  position: relative;
   display: block;
+}
+.card-image::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(33, 150, 243, 0.9);
 }
 
 .portfolio-title {
