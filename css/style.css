@@ -126,10 +126,12 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-nav .link:hover {
   color: var(--accent-color);
+  --color5: var(--accent-color);
 }
 .contact-nav .icon-mail {
   width: 16px;
@@ -143,9 +145,7 @@ p {
   margin-right: 10px;
   fill: currentColor;
 }
-.icon-phone:hover {
-  --color5: var(--accent-color);
-}
+
 /* hero */
 
 .overlay {
@@ -432,6 +432,7 @@ p {
   box-sizing: border-box;
   border-radius: 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 /* portfolio page */
@@ -449,6 +450,7 @@ p {
 
   color: var(--title-text-color);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 .section-button:not(:last-child) {
   margin-right: 8px;
@@ -554,6 +556,7 @@ p {
 .footer-page .link {
   height: 44px;
   width: 44px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,6 +565,7 @@ p {
   background: rgba(255, 255, 255, 0.1);
   transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-page .link:hover {
   background: var(--accent-color);
 }
@@ -597,6 +601,7 @@ p {
   color: #ffffff;
   font-size: 14px;
   line-height: 1.14;
+  text-transform: uppercase;
 }
 
 .footer-address {
