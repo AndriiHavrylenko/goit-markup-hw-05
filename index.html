@@ -471,8 +471,22 @@
             </li>
           </ul>
         </div>
-        <div>
-          <h3 class="footer-subtitle">подписаться на рассылку</h3>
+
+        <form>
+          <b class="footer-subtitle">подписаться на рассылку</b>
+          <div class="follow">
+            <label for="E-mail">E-mail</label>
+            <input type="email" name="mail" id="E-mail" />
+            <button class="footer-button" type="submit">
+              <span class="button-title">Подписаться </span
+              ><svg class="icon">
+                <use href="./images/symbol-defs.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- <div>
+          <h3></h3>
           <ul class="follow">
             <li><p class="footer-text">E-mail</p></li>
             <li>
@@ -484,9 +498,42 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
       <p class="copyright">2020 | Developed by GoIT Students</p>
     </footer>
+    <!-- hero form -->
+    <div class="backdrop is-hidden">
+      <form class="hero-form">
+        <b class="come">Оставьте свои данные, мы вам перезвоним</b>
+        <div>
+          <label for="name"> Имя</label>
+          <input type="text" name="user name" id="name" />
+        </div>
+        <div>
+          <label for="tel">Телефон</label>
+          <input type="tel" name="user tel" id="tel" />
+        </div>
+        <div>
+          <label for="mail">Почта</label>
+          <input type="email" name="mail" id="mail" />
+        </div>
+        <div>
+          <label for="comment"> Коментарий</label>
+          <textarea name="comment" id="comment" rows="10"></textarea>
+        </div>
+
+        <p>
+          <input type="checkbox" name="policy" id="policy" />
+          <label for="policy"
+            >Соглашаюсь с рассылкой и принимаю
+            <a><span>Условия договора</span></a></label
+          >
+        </p>
+        <div>
+          <button type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
